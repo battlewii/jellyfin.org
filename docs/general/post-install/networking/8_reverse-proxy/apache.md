@@ -86,13 +86,8 @@ The following configuration can be saved in `/etc/httpd/conf/extra/jellyfin.conf
 
 ```conf
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
-<Location /jellyfin/socket>
-    ProxyPreserveHost On
-    ProxyPass "ws://127.0.0.1:8096/jellyfin/socket"
-    ProxyPassReverse "ws://127.0.0.1:8096/jellyfin/socket"
-</Location>
 <Location /jellyfin>
-    ProxyPass "http://127.0.0.1:8096/jellyfin"
+    ProxyPass "http://127.0.0.1:8096/jellyfin" upgrade=websocket
     ProxyPassReverse "http://127.0.0.1:8096/jellyfin"
 </Location>
 ```
