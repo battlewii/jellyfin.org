@@ -96,3 +96,13 @@ The following configuration can be saved in `/etc/httpd/conf/extra/jellyfin.conf
     ProxyPassReverse "http://127.0.0.1:8096/jellyfin"
 </Location>
 ```
+
+After apache version 2.47
+
+```conf
+# Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
+<Location /jellyfin>
+    ProxyPass "http://127.0.0.1:8096/jellyfin" upgrade=websocket
+    ProxyPassReverse "http://127.0.0.1:8096/jellyfin" upgrade=websocket
+</Location>
+```
