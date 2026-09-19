@@ -97,7 +97,7 @@ The following configuration can be saved in `/etc/httpd/conf/extra/jellyfin.conf
 </Location>
 ```
 
-After apache version 2.47
+After Apache version 2.47
 
 ```conf
 # Jellyfin hosted on http(s)://DOMAIN_NAME/jellyfin
